@@ -827,7 +827,7 @@ export class PrioritiesService {
         const ownerMail = await this.userModel.findById(new Types.ObjectId(existingPriority.owner)).exec();
         let mailObject = {
           // recipients: [ownerMail.email],    // Actual Mail Id
-          recipients: ['kirado9833@ofacer.com', 'jhalak.jain@moreyeahs.com'],     // Testing
+          recipients: ['kirado9833@ofacer.com', 'akashsunhare2@gmail.com'],     // Testing
           subject: "Update Priorities",
           data: ownerMail.name
         }

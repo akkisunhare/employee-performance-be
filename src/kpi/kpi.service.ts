@@ -876,7 +876,7 @@ private shouldGenerateParentBreakdown(dto: any): boolean {
       console.log(ownerMail.name, ownerMail.email);
         let mailObject = {
           recipients: [ownerMail.email],    // Actual Mail Id
-          // recipients: ['kirado9833@ofacer.com', 'jhalak.jain@moreyeahs.com'],     // Testing
+          // recipients: ['kirado9833@ofacer.com', 'akashsunhare2@gmail.com'],     // Testing
           subject: "Update KPI",
           data: ownerMail.name
         }

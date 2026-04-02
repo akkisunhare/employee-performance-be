@@ -31,14 +31,14 @@ export class CreateQuarterDto {
   quarter: 'q1' | 'q2' | 'q3' | 'q4';
 
   @IsISO8601()
-  start_date: string; 
+  start_date: string;
 
   @IsISO8601()
-  end_date: string; 
-  
-   @IsString({ message: 'Organization ID must be a string' })
-    @IsNotEmpty({ message: 'Organization ID is required' })
-    organizationId: string;
+  end_date: string;
+
+  @IsString({ message: 'Organization ID must be a string' })
+  @IsNotEmpty({ message: 'Organization ID is required' })
+  organizationId: string;
 
   @IsOptional()
   @ValidateNested()

@@ -1,4 +1,12 @@
-import { IsString, IsNotEmpty, IsDateString, IsEnum, IsArray, ValidateNested, IsOptional } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsDateString,
+  IsEnum,
+  IsArray,
+  ValidateNested,
+  IsOptional,
+} from 'class-validator';
 import { Type } from 'class-transformer';
 import { WeekInterval } from './priority.types';
 
@@ -11,7 +19,13 @@ class WeeklyStatusDto {
   @IsNotEmpty()
   updateEndWeek: string;
 
-  @IsEnum(['Not yet started', 'On track', 'Behind schedule', 'Complete', 'Not applicable'])
+  @IsEnum([
+    'Not yet started',
+    'On track',
+    'Behind schedule',
+    'Complete',
+    'Not applicable',
+  ])
   @IsNotEmpty()
   updateStatus: string;
 
@@ -25,7 +39,14 @@ class WeekStatusDataDto {
   @IsNotEmpty()
   week: string;
 
-  @IsEnum(['Not yet started', 'On track', 'Behind schedule', 'Complete', 'Not applicable', 'Not able to store'])
+  @IsEnum([
+    'Not yet started',
+    'On track',
+    'Behind schedule',
+    'Complete',
+    'Not applicable',
+    'Not able to store',
+  ])
   @IsNotEmpty()
   status: string;
 }
@@ -51,7 +72,6 @@ export class CreatePriorityDto {
   @IsNotEmpty()
   quarter: string;
 
-
   @IsString()
   description: string;
 
@@ -59,10 +79,8 @@ export class CreatePriorityDto {
   @IsNotEmpty()
   type: string;
 
- 
   @IsNotEmpty()
   startWeek: WeekInterval;
-
 
   @IsNotEmpty()
   endWeek: WeekInterval;

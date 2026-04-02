@@ -12,4 +12,4 @@ export class UpdateRoleDto {
   @IsString()
   @IsNotEmpty()
   role: string;
-} 
+}

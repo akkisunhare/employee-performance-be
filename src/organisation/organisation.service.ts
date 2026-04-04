@@ -8,6 +8,7 @@ import { User } from '../users/entities/user.entity';
 import { UsersService } from '../users/users.service';
 import { generate91DayQuarters } from 'src/quarter/quarter.utils';
 import { Quarter } from 'src/quarter/entities/quarter.schema';
+import { UserRole } from 'src/users/dto/create-user.dto';
 
 @Injectable()
 export class OrganisationService {
@@ -43,7 +44,7 @@ export class OrganisationService {
       await this.usersService.updateRole({
         userId,
         organizationId: savedOrg._id.toString(),
-        role: 'organization_owner'
+        role: UserRole.ORGANIZATION_OWNER,
       });
     } catch (error) {
       console.error('Failed to set user as organization owner:', error);

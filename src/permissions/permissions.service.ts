@@ -6,6 +6,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User } from 'src/users/entities/user.entity';
 import { Model, Types } from 'mongoose';
 import { UsersService } from 'src/users/users.service';
+import { UserRole } from 'src/users/dto/create-user.dto';
 
 @Injectable()
 export class PermissionsService {
@@ -27,7 +28,8 @@ export class PermissionsService {
           role.organizationId.toString() === orgIdObj.toString()
         );
       // Assuming user schema has organizations array with roles
-      return orgRole ? (orgRole.role as Role) : null;
+      // return orgRole ? (orgRole.role as Role) : null;
+      return orgRole ? UserRole[orgRole.role] : null;
      
     }
   

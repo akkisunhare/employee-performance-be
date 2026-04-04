@@ -1,4 +1,5 @@
-import { IsString, IsNotEmpty } from 'class-validator';
+import { IsString, IsNotEmpty, IsEnum } from 'class-validator';
+import { UserRole } from './create-user.dto';
 
 export class UpdateRoleDto {
   @IsString()
@@ -11,5 +12,6 @@ export class UpdateRoleDto {
 
   @IsString()
   @IsNotEmpty()
-  role: string;
+  // @IsEnum(UserRole)
+  role: UserRole;
 }

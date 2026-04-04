@@ -65,7 +65,7 @@ export class UsersService {
       });
 
       return savedUser;
-    } catch (error) {
+    } catch (error: any) {
       throw new InternalServerErrorException(error.message);
     }
   }
@@ -327,16 +327,16 @@ Your App Team`,
         r => r.organizationId.toString() === organizationId
       );
       
-      if (existingRoleIndex !== -1) {
-        // Update existing role
-        user.organizationRoles[existingRoleIndex].role = role;
-      } else {
-        // Add new role
-        user.organizationRoles.push({
-          organizationId: orgObjectId,
-          role,
-        });
-      }
+      // if (existingRoleIndex !== -1) {
+      //   // Update existing role
+      //   user.organizationRoles[existingRoleIndex].role = role;
+      // } else {
+      //   // Add new role
+      //   user.organizationRoles.push({
+      //     organizationId: orgObjectId,
+      //     role,
+      //   });
+      // }
             
       // Directly update the user document using updateOne to ensure all fields are saved
       await this.userModel.updateOne(
@@ -352,7 +352,7 @@ Your App Team`,
       // Fetch and return the updated user
       const updatedUser = await this.userModel.findById(userObjectId).exec();
       return updatedUser;
-    } catch (error) {
+    } catch (error: any) {
       if (error instanceof BadRequestException) {
         throw error;
       }
